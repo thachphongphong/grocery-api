@@ -8,10 +8,12 @@ var bodyParser = require('body-parser');
 // Database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/local');
+var mongo_url = (process.env.OPENSHIFT_MONGODB_DB_URL) ? (process.env.OPENSHIFT_MONGODB_DB_URL + 'groceryapi') : 'localhost:27017/local';
+var db = monk(mongo_url);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+//var store = require('./routes/store');
 
 var app = express();
 
@@ -35,6 +37,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
+//app.use('/store', store);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
