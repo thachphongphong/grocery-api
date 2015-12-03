@@ -1,0 +1,27 @@
+extends layout
+block content
+   h1= title
+   p Welcome to our Store
+   link(rel='stylesheet', href='/css/bootstrap.min.css')
+   link(rel='stylesheet', href='/css/jquery.dataTables.min.css')
+   script(type='text/javascript', src='/js/bootstrap.min.js')
+   script(type='text/javascript', src='/js/jquery.dataTables.min.js')
+   script(type='text/javascript', src='/js/stores.js')
+   #navigate
+      a(href='javascript:void(0);', id='home') Home
+      =" "
+      a(href='javascript:void(0);', id='store') Store
+   // Wrapper
+   #wrapper
+       table(id='datatable', cellpadding="0", cellspacing="0", border="0", class="table table-striped table-bordered table-hover")
+           thead
+               tr
+                   th Name
+                   th Code
+                   th City
+                   th Country
+                   th Address
+                   th Email
+                   th Category
+                   th Verified
+           tbody

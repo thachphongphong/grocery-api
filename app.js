@@ -13,7 +13,7 @@ var db = monk(mongo_url);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-//var store = require('./routes/store');
+var stores = require('./routes/stores');
 
 var app = express();
 
@@ -37,7 +37,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
-//app.use('/store', store);
+app.use('/store', stores);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

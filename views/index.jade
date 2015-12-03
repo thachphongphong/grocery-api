@@ -1,7 +1,12 @@
 extends layout
 block content
     h1= title
-    p Welcome to our test
+    p Welcome to our Store
+    script(type='text/javascript', src='/js/index.js')
+    #navigate
+        a(href='javascript:void(0);', id='home') Home
+        =" "
+        a(href='javascript:void(0);', id='store') Store
     // Wrapper
     #wrapper
         // USER INFO
@@ -31,8 +36,8 @@ block content
                 tbody
         // /USER LIST
         // ADD USER
-        h2 Add User
         #addUser
+            h2 Add User
             fieldset
                 input#inputUserName(type='text', placeholder='Username')
                 input#inputUserEmail(type='text', placeholder='Email')
